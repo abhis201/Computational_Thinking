@@ -23,34 +23,34 @@ const Carousel = () => {
     return (
         <Slider {...settings}>
             <div>
-                <Paper elevation={3} style={{ padding: 20}}>
+                <Paper elevation={3} style={{ padding: 20 }}>
                     <center>
-                        <div style={{height: '50vh', paddingTop: '10%' }}>
-                        <Typography variant="h4" style={{ fontWeight: 'bold' }}>Welcome to Computational Thinking</Typography><br /><br />
-                        <Typography variant="h5"><a href="">Click Here</a> TO GET STARTED</Typography>
+                        <div>
+                            <Typography variant="h4" style={{ fontWeight: 'bold' }}>Welcome to Computational Thinking</Typography><br /><br />
+                            <Typography variant="h5"><a href="">Click Here</a> TO GET STARTED</Typography>
                         </div>
                     </center>
                 </Paper>
             </div>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', height: '60vh' }}>
                 <Paper elevation={3} style={{ padding: 20 }}>
                     <center>
-                        <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '10%', height:'60vh'}}>
-                            <div><Button><img src='/datatypes1.jpg' width={100}></img></Button>
-                                <Typography href="/datatypes">1. Data Types</Typography>
+                        <div >
+                            <div><Button href="/datatypes"><img src='/datatypes1.jpg' width={100}></img></Button>
+                                <Typography>1. Data Types</Typography>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                                 <div>
-                                    <Button><img src='/conditionals.jpg' width={100}></img></Button>
-                                    <Typography href="/conditionals">2. Conditionals</Typography>
+                                    <Button href="/conditionals"><img src='/conditionals.jpg' width={100}></img></Button>
+                                    <Typography>2. Conditionals</Typography>
                                 </div>
                                 <div>
-                                    <Button><img src='/loops.jpg' width={100}></img></Button>
+                                    <Button href='/loops'><img src='/loops.jpg' width={100}></img></Button>
                                     <Typography>3. Loops</Typography>
                                 </div>
                             </div>
                             <div>
-                                <Button><img src='/operators.jpg' width={100}></img></Button>
+                                <Button href='/operators'><img src='/operators.jpg' width={100}></img></Button>
                                 <Typography>4. Operators</Typography>
                             </div>
                         </div>

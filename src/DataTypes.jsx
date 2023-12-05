@@ -31,7 +31,7 @@ const Carousel = () => {
           <Typography variant='h5'>Variables are data containers that hold specific types of values</Typography>
           <br/><br/>
           <Typography variant='h5'>For Instance, water or a liquid is stored in a bottle, while a cartoom or a box can hold larger solid objects such as a compute. Similarly, different types of variables are used to hold different types of data</Typography>
-          <img src='/datatypes.jpeg' width={530}></img>
+          <img src='/datatypes.jpeg' width={500}></img>
           </center>
         </Paper>
       </div>
