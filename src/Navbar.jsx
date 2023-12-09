@@ -1,13 +1,15 @@
-import { Button } from "@mui/material"
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
-export const Navbar = ({menuOperation}) => {
+export const Navbar = () => {
     return (
-        <div style={{display:'flex', backgroundColor:'black', padding:10}}>
-            <Button style={{marginRight:10, color:'gold'}} onClick={()=>{menuOperation("home")}}>Home</Button>
-            <Button style={{marginRight:10, color:'gold'}} onClick={()=>{menuOperation("datatypes")}}>Data Types</Button>
-            <Button style={{marginRight:10, color:'gold'}} onClick={()=>{menuOperation("conditionals")}}>Conditionals</Button>
-            <Button style={{marginRight:10, color:'gold'}} onClick={()=>{menuOperation("loops")}}>Loops</Button>
-            <Button style={{marginRight:10, color:'gold'}} onClick={()=>{menuOperation("operators")}}>Operators</Button>
-        </div>
-    )
-}
+        <nav className="navbar">
+            <NavLink exact to="/" activeClassName="active">Home</NavLink>
+            <NavLink to="/datatypes" activeClassName="active">Data Types</NavLink>
+            <NavLink to="/conditionals" activeClassName="active">Conditionals</NavLink>
+            <NavLink to="/loops" activeClassName="active">Loops</NavLink>
+            <NavLink to="/operators" activeClassName="active">Operators</NavLink>
+        </nav>
+    );
+};

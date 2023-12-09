@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding: 10px;
+}
+
+.navbar a {
+    color: gold;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    margin: 0px 10px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+}
+
+.navbar a.active {
+    background-color: darkgoldenrod;
+    color: white;
+}
