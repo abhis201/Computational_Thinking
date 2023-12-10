@@ -25,22 +25,16 @@ export const Conditionals = () => {
                                 paddingTop: 0,
                             }}
                         >
-                            {/* <div className="accordion">
-                {accordionData.map(({ title, content }) => (
-                  <Accordion title={title} content={content} />
-                ))}
-              </div> */}
                             <Collections />
                         </Paper>
                     </div>
                     <div>
                         <Paper
                             elevation={3}
+                            className="py-0"
                             style={{
-                                padding: 20,
                                 height: "75vh",
                                 overflowY: "scroll",
-                                paddingTop: 0,
                             }}
                         >
                             <Content />
@@ -61,45 +55,6 @@ export const Conditionals = () => {
                     </div>
                 </Slider>
             </center>
-        </div>
-    );
-};
-
-const accordionData = [
-    {
-        title: "Section 1",
-        content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
-          laborum cupiditate possimus labore, hic temporibus velit dicta earum
-          suscipit commodi eum enim atque at? Et perspiciatis dolore iure
-          voluptatem.`,
-    },
-    {
-        title: "Section 2",
-        content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-          reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-          quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-          pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-          quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-          Repudiandae, mollitia id reprehenderit a ab odit!`,
-    },
-    {
-        title: "Section 3",
-        content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-          quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-          dolor ut sequi minus iste? Quas?`,
-    },
-];
-
-const Accordion = ({ title, content }) => {
-    const [isActive, setIsActive] = useState(false);
-
-    return (
-        <div className="accordion-item">
-            <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
-                <div>{title}</div>
-                <div>{isActive ? "-" : "+"}</div>
-            </div>
-            {isActive && <div className="accordion-content">{content}</div>}
         </div>
     );
 };
@@ -309,21 +264,22 @@ const posts = [
 
 function BlogSection() {
     return (
-        <div className="bg-white py-12 sm:py-18">
+        <div className="mt-5 py-12 sm:py-18" style={{ borderRadius: 20 }}>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">
                         From the blog
                     </h2>
-                    <p className="mt-2 text-lg leading-8 text-gray-600">
+                    <p className="mt-2 text-lg leading-8 text-gray-700">
                         Learn how to grow your business with our expert advice.
                     </p>
                 </div>
-                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     {posts.map((post) => (
                         <article
                             key={post.id}
-                            className="flex max-w-xl flex-col items-start justify-between"
+                            className="bg-gray-800 p-5 flex max-w-xl flex-col items-start justify-between"
+                            style={{ borderRadius: 20 }}
                         >
                             <img
                                 src={post.image}
@@ -331,25 +287,26 @@ function BlogSection() {
                                 height={300}
                                 style={{ borderRadius: 10 }}
                             ></img>
-                            <div className="flex items-center gap-x-4 text-xs pt-2">
-                                <time dateTime={post.datetime} className="text-gray-500">
+                            <div className="flex gap-x-5 items-center text-xs pt-2">
+                                <time dateTime={post.datetime} className="flex text-white">
                                     {post.date}
                                 </time>
                                 <a
                                     href={post.category.href}
-                                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                                    className="flex relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                                 >
                                     {post.category.title}
                                 </a>
                             </div>
                             <div className="group relative">
-                                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                                <hr style={{ color: 'darkgray', marginTop: 10 }} />
+                                <h3 className="mt-3 text-lg font-semibold leading-6 text-white group-hover:text-blue">
                                     <a href={post.href}>
                                         <span className="absolute inset-0" />
                                         {post.title}
                                     </a>
                                 </h3>
-                                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                                <p className="mt-5 line-clamp-3 text-sm leading-6 text-white">
                                     {post.description}
                                 </p>
                             </div>
@@ -360,13 +317,13 @@ function BlogSection() {
                                     className="h-10 w-10 rounded-full bg-gray-50"
                                 />
                                 <div className="text-sm leading-6">
-                                    <p className="font-semibold text-gray-900">
+                                    <p className="font-semibold text-white">
                                         <a href={post.author.href}>
                                             <span className="absolute inset-0" />
                                             {post.author.name}
                                         </a>
                                     </p>
-                                    <p className="text-gray-600">{post.author.role}</p>
+                                    <p className="text-white">{post.author.role}</p>
                                 </div>
                             </div>
                         </article>
@@ -403,28 +360,27 @@ const callouts = [
 
 function Collections() {
     return (
-        <div className="bg-gray-100">
+        <div style={{ borderRadius: 20 }}>
             <div className="mx-auto max-w-7xl mt-6 px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl py-4 sm:py-10 lg:max-w-none lg:py-12">
-                    <h2 className="text-2xl font-bold pb-5 pt-5 text-gray-900">Collections</h2>
-
-                    <div className="space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
+                <div className="mx-auto max-w-2xl py-2 sm:py-6 lg:max-w-none lg:py-10">
+                    <h2 className="text-2xl font-bold mb-10 py-2 text-gray-800 z-1">Collections</h2>
+                    <div className="space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 z-2">
                         {callouts.map((callout) => (
                             <div key={callout.name} className="group relative">
-                                <div className="relative h-70 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-54">
+                                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-54">
                                     <img
                                         src={callout.imageSrc}
                                         alt={callout.imageAlt}
                                         className="h-full w-full object-cover object-center"
                                     />
                                 </div>
-                                <h3 className="mt-6 text-sm text-gray-500">
+                                <h3 className="mt-6 text-sm text-gray-800">
                                     <a href={callout.href}>
                                         <span className="absolute inset-0" />
                                         {callout.name}
                                     </a>
                                 </h3>
-                                <p className="text-base font-semibold text-gray-900">{callout.description}</p>
+                                <p className="text-base font-semibold text-gray-800">{callout.description}</p>
                             </div>
                         ))}
                     </div>
