@@ -20,8 +20,7 @@ export const Loops = () => {
           <div>
             <Paper elevation={3}
               style={{
-                padding: 20, height: "75vh", overflowY: "scroll",
-                paddingTop: 0,
+                height: "75vh", overflowY: "scroll",
               }}>
               <Stats />
             </Paper>
@@ -29,8 +28,7 @@ export const Loops = () => {
           <div>
           <Paper elevation={3}
               style={{
-                padding: 20, height: "75vh", overflowY: "scroll",
-                paddingTop: 0,
+                height: "75vh", overflowY: "scroll",
               }}>
               <PricingSection />
             </Paper>

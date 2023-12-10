@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,46 +15,38 @@ export const Conditionals = () => {
 
     return (
         <div>
-            <center>
-                <Slider {...settings}>
-                    <div>
-                        <Paper
-                            elevation={3}
-                            style={{
-                                padding: 20, height: "75vh", overflowY: "scroll",
-                                paddingTop: 0,
-                            }}
-                        >
-                            <Collections />
-                        </Paper>
-                    </div>
-                    <div>
-                        <Paper
-                            elevation={3}
-                            className="py-0"
-                            style={{
-                                height: "75vh",
-                                overflowY: "scroll",
-                            }}
-                        >
-                            <Content />
-                        </Paper>
-                    </div>
-                    <div>
-                        <Paper
-                            elevation={3}
-                            style={{
-                                padding: 20,
-                                height: "75vh",
-                                overflowY: "scroll",
-                                paddingTop: 0,
-                            }}
-                        >
-                            <BlogSection />
-                        </Paper>
-                    </div>
-                </Slider>
-            </center>
+            <Slider {...settings}>
+                <div>
+                    <Paper
+                    elevation={3}
+                        style={{
+                            height: "75vh", overflowY: "hidden",
+                        }}
+                    >
+                        <ShopCollections />
+                    </Paper>
+                </div>
+                <div>
+                    <Paper
+                        style={{
+                            height: "75vh",
+                            overflowY: "scroll",
+                        }}
+                    >
+                        <Content />
+                    </Paper>
+                </div>
+                <div>
+                    <Paper
+                        style={{
+                            height: "75vh",
+                            overflowY: 'scroll',
+                        }}
+                    >
+                        <BlogSection />
+                    </Paper>
+                </div>
+            </Slider>
         </div>
     );
 };
@@ -68,7 +60,7 @@ import {
 export function Content() {
     return (
         <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-            <div className="absolute inset-0 -z-10 overflow-hidden">
+            <div className="absolute inset-0-z-10 overflow-hidden">
                 <svg
                     className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
                     aria-hidden="true"
@@ -274,7 +266,7 @@ function BlogSection() {
                         Learn how to grow your business with our expert advice.
                     </p>
                 </div>
-                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-1 border-t border-gray-300 pt-10 sm:mt-12 sm:pt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     {posts.map((post) => (
                         <article
                             key={post.id}
@@ -334,58 +326,98 @@ function BlogSection() {
     );
 }
 
-const callouts = [
-    {
-        name: 'Desk and Office',
-        description: 'Work from home accessories',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
-        imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
-        href: '#',
-    },
-    {
-        name: 'Self-Improvement',
-        description: 'Journals and note-taking',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
-        imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
-        href: '#',
-    },
-    {
-        name: 'Travel',
-        description: 'Daily commute essentials',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
-        imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-        href: '#',
-    },
-]
-
-function Collections() {
+function ShopCollections() {
     return (
-        <div style={{ borderRadius: 20 }}>
-            <div className="mx-auto max-w-7xl mt-6 px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl py-2 sm:py-6 lg:max-w-none lg:py-10">
-                    <h2 className="text-2xl font-bold mb-10 py-2 text-gray-800 z-1">Collections</h2>
-                    <div className="space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 z-2">
-                        {callouts.map((callout) => (
-                            <div key={callout.name} className="group relative">
-                                <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-54">
-                                    <img
-                                        src={callout.imageSrc}
-                                        alt={callout.imageAlt}
-                                        className="h-full w-full object-cover object-center"
-                                    />
+        <div className="relative overflow-hidden bg-white">
+            <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+                <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+                    <div className="sm:max-w-lg">
+                        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                            AI models are finally here
+                        </h1>
+                        <p className="mt-4 text-xl text-gray-500">
+                            This year has witnessed the emergence of numerous ML/AI models capable of handling complex computational tasks. This advancement, while remarkable, has led to increased stress among humans, as AI can now efficiently perform tasks with ease and in less time
+                        </p>
+                    </div>
+                    <div>
+                        <div className="mt-10">
+                            {/* Decorative image grid */}
+                            <div
+                                aria-hidden="true"
+                                className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
+                            >
+                                <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                                    <div className="flex items-center space-x-6 lg:space-x-8">
+                                        <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                                            <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                                                <img
+                                                    src="https://img.freepik.com/premium-photo/beautiful-female-robot-with-artificial-intelligence_536047-2944.jpg"
+                                                    alt=""
+                                                    className="h-full w-full object-cover object-center"
+                                                />
+                                            </div>
+                                            <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                <img
+                                                    src="https://static.vecteezy.com/system/resources/previews/030/468/407/large_2x/a-side-view-from-a-computer-desk-in-a-modern-corporate-office-vertical-mobile-wallpaper-ai-generated-free-photo.jpg"
+                                                    alt=""
+                                                    className="h-full w-full object-cover object-center"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                                            <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                <img
+                                                    src="https://cdn.pixabay.com/photo/2023/05/22/08/26/ai-generated-8010190_1280.jpg"
+                                                    alt=""
+                                                    className="h-full w-full object-cover object-center"
+                                                />
+                                            </div>
+                                            <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                <img
+                                                    src="https://thumbs.dreamstime.com/b/ai-generated-vertical-illustration-cpu-motherboard-central-computer-processor-ai-generated-vertical-illustration-cpu-268553642.jpg"
+                                                    alt=""
+                                                    className="h-full w-full object-cover object-center"
+                                                />
+                                            </div>
+                                            <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                <img
+                                                    src="https://www.dpreview.com/files/p/articles/7928089150/kodak-professional-select-1.jpeg"
+                                                    alt=""
+                                                    className="h-full w-full object-cover object-center"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                                            <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                <img
+                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3U2Qnc4GmBPLqh1LhHLvJovKc2xcshFyoWPrT6lR0f6kFIOpb3dkldC4VhxMKVX7RoUM&usqp=CAU"
+                                                    alt=""
+                                                    className="h-full w-full object-cover object-center"
+                                                />
+                                            </div>
+                                            <div className="h-64 w-44 overflow-hidden rounded-lg">
+                                                <img
+                                                    src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/psychedelic-daisy-cindy-greenstein.jpg"
+                                                    alt=""
+                                                    className="h-full w-full object-cover object-center"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="mt-6 text-sm text-gray-800">
-                                    <a href={callout.href}>
-                                        <span className="absolute inset-0" />
-                                        {callout.name}
-                                    </a>
-                                </h3>
-                                <p className="text-base font-semibold text-gray-800">{callout.description}</p>
                             </div>
-                        ))}
+
+                            <a
+                                href="#"
+                                className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+                            >
+                                Learn AI Skills
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+
