@@ -135,7 +135,7 @@ function HeroSection() {
 
 
   return (
-    <div className="bg-white">
+    <div>
       <div className="relative isolate px-6 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

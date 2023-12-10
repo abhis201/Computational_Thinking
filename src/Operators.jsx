@@ -17,17 +17,17 @@ export const Operators = () => {
     <div>
       <Slider {...settings}>
         <div>
-          <Paper elevation={3} style={{ paddingLeft: "10%", paddingRight: '10%', height: '75vh', paddingTop: '2%' }}>
+          <Paper style={{ paddingLeft: "10%", paddingRight: '10%', height: '75vh', paddingTop: '2%' }}>
             <Description />
           </Paper>
         </div>
         <div>
-          <Paper elevation={3} style={{ padding: '10%', height: '75vh', overflowY: 'scroll', paddingTop: 10, paddingBottom: 20 }}>
+          <Paper style={{ padding: '10%', height: '75vh', overflowY: 'scroll', paddingTop: 10, paddingBottom: 20 }}>
             <FormInput />
           </Paper>
         </div>
         <div>
-          <Paper elevation={3} style={{ padding: 20, height: '75vh' }}>
+          <Paper style={{ padding: 20, height: '75vh' }}>
             <About />
           </Paper>
         </div>
@@ -85,7 +85,7 @@ function Description() {
                     </div>
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <a href="/resume.pdf" className="font-medium text-indigo-600 hover:text-indigo-500">
+                    <a href="/resume.pdf" target="_blank" className="font-medium text-indigo-600 hover:text-indigo-500">
                       Download
                     </a>
                   </div>
@@ -99,7 +99,7 @@ function Description() {
                     </div>
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-86e926dc-6639-4e88-9b3f-e1afbcf6ddea.jpg?v=1674211001000" className="font-medium text-indigo-600 hover:text-indigo-500">
+                    <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-86e926dc-6639-4e88-9b3f-e1afbcf6ddea.jpg?v=1674211001000" target="_blank" className="font-medium text-indigo-600 hover:text-indigo-500">
                       Download
                     </a>
                   </div>
