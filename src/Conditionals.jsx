@@ -59,7 +59,7 @@ import {
 
 export function Content() {
   return (
-    <div className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-0">
+    <div className="relative isolate overflow-hidden px-6 py-20 sm:py-20 lg:px-0">
       <div className="absolute inset-0-z-10 overflow-hidden">
         <svg
           className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
@@ -331,7 +331,7 @@ function BlogSection() {
 function ShopCollections() {
   return (
     <div className="relative overflow-hidden bg-white">
-      <div className="pb-80 pt-14 sm:pt-20 lg:pt-36">
+      <div className="pb-80 pt-14 sm:pt-16 lg:pt-32">
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
